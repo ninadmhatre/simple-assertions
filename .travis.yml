@@ -10,4 +10,4 @@ before_install:
 install:
   - pip install .
 script:
-  - ./run_tests.sh
+  - bash ./run_tests.sh

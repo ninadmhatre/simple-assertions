@@ -12,7 +12,7 @@ setup(
     author="Ninad Mhatre",
     author_email="ninad.mhatre@gmail.com",
     url="",
-    download_url="https://github.com/assertpy/assertpy/archive/{}.tar.gz".format(
+    download_url="https://github.com/ninadmhatre/simple-assertions/archive/{}.tar.gz".format(
         version
     ),
     keywords=[

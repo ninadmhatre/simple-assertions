@@ -46,7 +46,7 @@ class AssertionsBase:
         self.logger = logger or _logger
         self._as_warn_flag = as_warn
         self.is_warn_mode = False
-        self.val_to_chk: ValToChk = None
+        self.val_to_chk = None
 
         self._is_running_in_warn_mode()
 

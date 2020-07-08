@@ -10,8 +10,8 @@ setup(
     description="Assertion library (skeleton) inspired from `assertpy` but without batteries",
     author="Ninad Mhatre",
     author_email="ninad.mhatre@gmail.com",
-    url="https://github.clong_description_content_typeom/ninadmhatre/simple-assertions",
-    download_url="https://github.com/assertpy/assertpy/archive/{}.tar.gz".format(
+    url="https://github.com/ninadmhatre/simple-assertions",
+    download_url="https://github.com/ninadmhatre/simple-assertions/archive/{}.tar.gz".format(
         version
     ),
     keywords=[
@@ -19,8 +19,8 @@ setup(
         "testing",
         "assert",
         "assertion",
-        "delayed-assertions"
-        "delayedassertions"
+        "delayed-assertions",
+        "delayedassertions",
         "simple-assertions",
         "simpleassertions",
         "nose",

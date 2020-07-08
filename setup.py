@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 import simple_assertions
 
 version = simple_assertions.__version__
@@ -7,11 +7,10 @@ setup(
     name="simple-assertions",
     packages=["simple_assertions"],
     version=version,
-    description="Assertion library (skeleton) inspired from `assertpy`"
-                " but without batteries",
+    description="Assertion library (skeleton) inspired from `assertpy` but without batteries",
     author="Ninad Mhatre",
     author_email="ninad.mhatre@gmail.com",
-    url="",
+    url="https://github.clong_description_content_typeom/ninadmhatre/simple-assertions",
     download_url="https://github.com/assertpy/assertpy/archive/{}.tar.gz".format(
         version
     ),
@@ -20,6 +19,8 @@ setup(
         "testing",
         "assert",
         "assertion",
+        "delayed-assertions"
+        "delayedassertions"
         "simple-assertions",
         "simpleassertions",
         "nose",
@@ -41,4 +42,7 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
     ],
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
+    python_requires='>=3.5',
 )

@@ -87,9 +87,27 @@ class FuncBasedCases(unittest.TestCase):
         assert_that(1).is_not_instance_of(str)
         assert_that(1).is_not_in([2, 3, 4])
 
+    def test_failed_assertions(self):
         with self.assertRaises(AssertionError):
             assert_that("a").is_numeric()
 
+        with self.assertRaises(AssertionError):
+            assert_that("1").is_in([1, 2])
+
+        with self.assertRaises(AssertionError):
+            assert_that(1).is_not_in([1, 2])
+            
+        with self.assertRaises(AssertionError):
+            assert_that(1).is_equal_or_in_seq([3, 4])
+            
+        with self.assertRaises(AssertionError):
+            assert_that(None).is_true()
+
+        with self.assertRaises(AssertionError):
+            assert_that(1).is_false()
+            
+        with self.assertRaises(AssertionError):
+            assert_that(1).is_instance_of(str)
 
 if __name__ == "__main__":
     unittest.main()

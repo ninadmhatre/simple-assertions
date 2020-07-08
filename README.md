@@ -1,6 +1,9 @@
 # simple-assertions
 
-Assertion library (skeleton) heavily inspired from `assertpy` but without batteries!
+Assertion library (skeleton) inspired from `assertpy` but without batteries! also allows to convert all
+the assertions to warnings, just like delayed asserts.
+
+[![Build Status](https://travis-ci.org/ninadmhatre/simple-assertions.svg?branch=master)](https://travis-ci.org/ninadmhatre/simple-assertions)
 
 # Motivation
 
@@ -18,6 +21,12 @@ warning.
 3. `assert_that` in `assertpy` creates new instance of class and loads all the extensions on every
 call, and i wanted to avoid that!
    - By exposing the `SimpleAssertion` class, you can just make it part of your assertion class
+
+## Installation
+
+```
+pip install simple-assertions
+```
 
 ## Usage
 
@@ -76,10 +85,3 @@ class YourTestClass:
 ```
 
 Though only checked with `unittests` but it should work fine with [pytest](http://pytest.org/) or [Nose](http://nose.readthedocs.org/).
-
-
-## Installation
-
-```
-pip install simple-assertions
-```

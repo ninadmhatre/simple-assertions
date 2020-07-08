@@ -126,6 +126,5 @@ class CompositionBasedUse(unittest.TestCase):
         with self.assertRaises(AssertionError):
             self.assert_that(1).is_instance_of(str)
 
-
 if __name__ == "__main__":
     unittest.main()

@@ -87,7 +87,6 @@ class FuncBasedCases(unittest.TestCase):
         assert_that(1).is_not_instance_of(str)
         assert_that(1).is_not_in([2, 3, 4])
 
-
     def test_failed_assertions(self):
         with self.assertRaises(AssertionError):
             assert_that("a").is_numeric()
@@ -109,7 +108,6 @@ class FuncBasedCases(unittest.TestCase):
             
         with self.assertRaises(AssertionError):
             assert_that(1).is_instance_of(str)
-
 
 if __name__ == "__main__":
     unittest.main()

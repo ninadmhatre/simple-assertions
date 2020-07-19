@@ -11,7 +11,7 @@ _logger = logging.getLogger(__name__)
 
 PYASSERT_ERRORS_AS_WARNINGS = "ASSERT_ERROR_AS_WARNING"
 
-__version__ = "0.2.1"
+__version__ = "0.2.2"
 
 
 class ValToChk:

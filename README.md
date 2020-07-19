@@ -1,7 +1,6 @@
 # simple-assertions
 
-Assertion library (skeleton) inspired from `assertpy` but without batteries! also allows to convert all
-the assertions to warnings, just like delayed asserts.
+Assertion library (skeleton) inspired from [assertpy](https://github.com/assertpy/assertpy) but without batteries! also allows to convert all the assertions to warnings, just like delayed asserts.
 
 [![Build Status](https://travis-ci.org/ninadmhatre/simple-assertions.svg?branch=master)](https://travis-ci.org/ninadmhatre/simple-assertions)
 

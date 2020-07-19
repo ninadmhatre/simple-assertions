@@ -27,7 +27,7 @@ setup(
         "nosetests",
         "unittest",
     ],
-    license="BSD",
+    license="MIT",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",

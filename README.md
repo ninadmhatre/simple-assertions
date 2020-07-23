@@ -21,6 +21,9 @@ warning.
 call, and i wanted to avoid that!
    - By exposing the `SimpleAssertion` class, you can just make it part of your assertion class
 
+> Note: earlier i used `assert_that` keyword from `assertpy` but i felt like it's copying from other library
+>, so i changed `assert_that` to `check`, while reading this gives same amount of experience but saved 6 chars!
+
 ## Installation
 
 ```
@@ -32,15 +35,15 @@ pip install simple-assertions
 Please check `tests` files for more usage here is only basic usage
 
 ### As Function
-Just import the `assert_that` function, and away you go...
+Just import the `check` function, and away you go...
 
 ```python
-from simple_assertions import assert_that
+from simple_assertions import check
 
 def test_something():
-    assert_that(4 + 10).is_equal_to(14)
-    assert_that(1).is_instance_of(int)
-    assert_that(3, "lucky_num", as_warn=True).is_equal_to(4)
+    check(4 + 10).is_equal_to(14)
+    check(1).is_instance_of(int)
+    check(3, "lucky_num", as_warn=True).is_equal_to(4)
 ```
 
 ### As instance
@@ -50,12 +53,12 @@ from simple_assertions import SimpleAssertions
 
 class YourTestClass:
     def __init__(self):
-        self.assert_that = SimpleAssertions().assert_that
+        self.check = SimpleAssertions().check
 
     def test_something(self):
-        self.assert_that(4 + 10).is_equal_to(14)
-        self.assert_that(1).is_instance_of(int)
-        self.assert_that(3, "lucky_num", as_warn=True).is_equal_to(4)      
+        self.check(4 + 10).is_equal_to(14)
+        self.check(1).is_instance_of(int)
+        self.check(3, "lucky_num", as_warn=True).is_equal_to(4)      
 ```
 
 ### Add your own batteries
@@ -69,18 +72,18 @@ class YourAssertions(SimpleAssertions):
 
     def is_greater_than(self, other: Union[int, float]):
         if self.val_to_chk.val < other:
-            self.error(self.generate_err_msg(other, "to be greater than"))
+            self.raise_err(self.compare_err_msg(other, "to be greater than"))
         return self
 
 
 class YourTestClass:
     def __init__(self):
-        self.assert_that = YourAssertions().assert_that
+        self.check = YourAssertions().check
 
     def test_something(self):
-        self.assert_that(4 + 10).is_greater_than(10).is_equal_to(14)
-        self.assert_that(1).is_instance_of(int)
-        self.assert_that(3, "lucky_num", as_warn=True).is_equal_to(4)      
+        self.check(4 + 10).is_greater_than(10).is_equal_to(14)
+        self.check(1).is_instance_of(int)
+        self.check(3, "lucky_num", as_warn=True).is_equal_to(4)      
 ```
 
 Though only checked with `unittests` but it should work fine with [pytest](http://pytest.org/) or [Nose](http://nose.readthedocs.org/).

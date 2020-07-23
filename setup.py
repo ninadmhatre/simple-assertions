@@ -18,6 +18,7 @@ setup(
         "test",
         "testing",
         "assert",
+        "check",
         "assertion",
         "delayed-assertions",
         "delayedassertions",

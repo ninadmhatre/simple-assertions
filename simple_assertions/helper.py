@@ -1,5 +1,8 @@
 import os
 import inspect
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class WarnVals:
@@ -15,16 +18,21 @@ class ValToChk:
         self.desc = desc
 
 
-def show_line_no(msg, keywords=("check", "PYASSERT_ERRORS_AS_WARNINGS")):
+def show_line_no(msg, keywords=("check", "check_that")):
     frame = inspect.currentframe()
     err_frame = None
 
     while frame:
         names = frame.f_code.co_names
-        if all([k in names for k in keywords]):
+        if any([k in names for k in keywords]):
             err_frame = frame
             break
         frame = frame.f_back
+
+    if not err_frame:
+        logger.error("failed to get line no. for error, please check!")
+        logger.error("dumping src frame: {}".format(frame))
+        err_frame = frame
 
     return "[{}:{}]: {}".format(
         os.path.basename(err_frame.f_code.co_filename), err_frame.f_lineno, msg

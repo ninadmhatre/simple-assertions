@@ -13,7 +13,7 @@ _logger = logging.getLogger(__name__)
 
 PYASSERT_ERRORS_AS_WARNINGS = "ASSERT_ERROR_AS_WARNING"
 
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 
 
 def _read_err_to_warn_envvar() -> str:
